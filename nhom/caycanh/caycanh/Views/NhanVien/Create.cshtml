@@ -1,0 +1,44 @@
+﻿@model caycanh.Models.NhanVien
+@{
+    ViewBag.Title = "Thêm Nhân Viên";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<h2>Tạo mới Nhân Viên</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaNhanVien, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.MaNhanVien, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MaNhanVien, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenNhanVien, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TenNhanVien, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TenNhanVien, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ChucVu, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.ChucVu, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ChucVu, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Luong, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Luong, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Luong, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Tạo mới" class="btn btn-primary custom-button" />
+        @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

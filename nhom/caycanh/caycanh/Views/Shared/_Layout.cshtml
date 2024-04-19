@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suha Garden</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+<style>
+    /* CSS tùy chỉnh cho chân trang */
+    footer {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+    }
+
+        footer h4 {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        footer li {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+    .navbar {
+        background-color: #ffffff; /* Thay đổi màu nền của thanh điều hướng */
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+    .user-icon {
+        font-size: 40px;
+        color: black; /* Set the color to black */
+    }
+</style>
+</head>
+<body>
+    <<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="~/img//logo.jpg" alt="Logo">
+                <h1 class="mb-0">Suha Garden</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        @Html.ActionLink("Trang chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Cây", "cay", "CayCanh", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Sản Phẩm", "sanpham", "SanPham", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+            </div>
+            <a href="@Url.Action("Admin", "Home")" class="user-icon"><i class="fas fa-user-circle"></i></a>
+        </div>
+    </nav>
+    <div class="container body-content">
+        
+        <hr />
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Địa chỉ</h4>
+                    <p>Đường Lê Lai, Cam Đức, Huyện Cam, Tỉnh Khánh Hòa</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Thông tin đặt hàng</h4>
+                    <p>Số điện thoại: 0366 541 719</p>
+                    <p>Email: suhagarden123@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li>Bảo Hành 14 ngày</li>
+                        <li>Hỗ trợ chăm sóc</li>
+                        <li>Giao hàng tận nơi</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

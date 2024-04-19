@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "LoaiCay")">
+            <h2>Loại Cây</h2>
+        </a>
+    </div>
+
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "CayCanh")">
+            <h2>Cây Cảnh</h2>
+        </a>
+    </div>
+
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "NhaCungCap")">
+            <h2>Nhà Cung Cấp</h2>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "SanPham")">
+            <h2>Sản Phẩm</h2>
+        </a>
+    </div>
+
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "NhanVien")">
+            <h2>Nhân Viên</h2>
+        </a>
+    </div>
+
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "KhachHang")">
+            <h2>Khách Hàng</h2>
+        </a>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "DonHang")">
+            <h2>Đơn Hàng</h2>
+        </a>
+    </div>
+
+    <div class="centered-box">
+        <a href="@Url.Action("Index", "ChiTietDonHang")">
+            <h2>Chi Tiết Đơn Hàng</h2>
+        </a>
+    </div>
+
+    
+
+</div>
+<!-- Các hàng khác tại đây -->
+
+<style>
+    .centered-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+</style>

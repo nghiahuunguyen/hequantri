@@ -1,0 +1,98 @@
+﻿<main>
+    <section class="image-slider">
+        <div class="slider-container">
+            <img src="~/img/2.jpg" alt="Image 1">
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="intro-container">
+            <h2 class="intro-title">Chào mừng đến với chúng tôi</h2>
+
+            <p class="intro-description">Chúng tôi cam kết mang đến cho bạn những sản phẩm chất lượng cao, đa dạng về kiểu dáng và kích thước, phù hợp với mọi không gian sống.</p>
+            <p class="intro-description">Quý khách liên tục được cập nhật các sản phẩm mới nhất hãy liên tục cập nhật tại đây để có những thiết kế mới lại, độc đáo. Chúng sẽ giúp không gian của quý khách trở lên tuyệt vời,ngăn nắp và tươi xanh, nhiều tài nhiều lộc.</p>
+        </div>
+    </section>
+
+    <section class="row" aria-labelledby="infoSectionTitle">
+        <div class="product-container">
+            <div class="product-item">
+                <img src="~/img/sen-da-nau.jpg" alt="Product Image 1" style="width:63%;">
+                <p class="image-description">Cây sen đá nâu</p>
+            </div>
+            <div class="product-item">
+                <img src="~/img/davang.jpg" alt="Product Image 2" style="width: 95%;">
+                <p class="image-description">Cây sen đá vàng</p>
+            </div>
+            <div class="product-item">
+                <img src="~/img/sen-da-hong.jpg" alt="Product Image 3">
+                <p class="image-description">Cây sen đá hồng</p>
+            </div>
+        </div>
+    </section>
+    <section class="row" aria-labelledby="infoSectionTitle">
+        <div class="product-container">
+            <div class="product-item">
+                <img src="~/img/cuoc.jpg" alt="Product Image 1" style="width:54%;">
+                <p class="image-description">Cuốc, xẻng</p>
+            </div>
+            <div class="product-item">
+                <img src="~/img/phan.jpg" alt="Product Image 2" style="width: 95%;">
+                <p class="image-description">Phân Bón</p>
+            </div>
+            <div class="product-item">
+                <img src="~/img/tieu-canh-sen-da-9.jpg" alt="Product Image 3" style="width:54%;">
+                <p class="image-description">Chậu kiểu</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<style>
+    .product-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-item {
+        flex-basis: calc(33.33% - 10px);
+        text-align: center;
+    }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .image-slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .slider-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .intro-section {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .intro-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .intro-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .intro-description {
+        font-size: 16px;
+    }
+</style>

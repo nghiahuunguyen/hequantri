@@ -1,0 +1,47 @@
+﻿@model caycanh.Models.NhanVien
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Bạn có chắc chắn muốn xóa bản ghi này?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaNhanVien)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaNhanVien)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNhanVien)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenNhanVien)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ChucVu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ChucVu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Luong)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

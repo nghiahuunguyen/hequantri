@@ -1,0 +1,31 @@
+﻿@model caycanh.Models.NhanVien
+@{
+    ViewBag.Title = "Xem Chi Tiết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết Nhan Viên</h2>
+
+<table class="table">
+    <tr>
+        <th>Mã Nhân Viên:</th>
+        <td>@Model.MaNhanVien</td>
+    </tr>
+    <tr>
+        <th>Tên Nhân Viên:</th>
+        <td>@Model.TenNhanVien</td>
+    </tr>
+    <tr>
+        <th>Chức Vụ:</th>
+        <td>@Model.ChucVu</td>
+    </tr>
+    <tr>
+        <th>Lương:</th>
+        <td>@Model.Luong</td>
+    </tr>
+</table>
+
+<p>
+    @Html.ActionLink("Quay lại", "Index")
+</p>
+

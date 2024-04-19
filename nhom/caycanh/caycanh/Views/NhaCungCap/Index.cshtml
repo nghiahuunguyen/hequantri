@@ -1,0 +1,39 @@
+﻿@model List<caycanh.Models.NhaCungCap>
+@{
+    ViewBag.Title = "Nhà Cung Cấp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<h2>Danh Sách Nhà Cung Cấp</h2>
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Thêm mới
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>Mã Nhà Cung Cấp</th>
+        <th>Tên Nhà Cung Cấp</th>
+        <th>Địa Chỉ</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaNhaCungCap</td>
+            <td>@item.TenNhaCungCap</td>
+            <td>@item.DiaChi</td>
+            <td>
+                <a href="@Url.Action("Details", new { id = item.MaNhaCungCap })" class="btn btn-info btn-sm">
+                    <i class="fas fa-eye"></i> Chi tiết
+                </a>
+                <a href="@Url.Action("Edit", new { id = item.MaNhaCungCap })" class="btn btn-warning btn-sm">
+                    <i class="fas fa-edit"></i> Sửa
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.MaNhaCungCap })" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i> Xóa
+                </a>
+            </td>
+        </tr>
+    }
+</table>

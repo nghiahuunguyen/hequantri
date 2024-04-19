@@ -1,0 +1,26 @@
+﻿@model caycanh.Models.LoaiCay
+
+<h2>Chỉnh sửa chi tiết</h2>
+
+@using (Html.BeginForm("Edit", "LoaiCay", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaLoaiCay, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.MaLoaiCay, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MaLoaiCay, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenLoaiCay, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TenLoaiCay, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TenLoaiCay, "", new { @class = "text-danger" })
+    </div>
+
+
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}

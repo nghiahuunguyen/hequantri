@@ -1,0 +1,32 @@
+﻿@model caycanh.Models.LoaiCay
+@{
+    ViewBag.Title = "Thêm Loại Cây";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<h2>Tạo mới Loại cây</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaLoaiCay, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.MaLoaiCay, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MaLoaiCay, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenLoaiCay, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TenLoaiCay, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TenLoaiCay, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Tạo mới" class="btn btn-primary custom-button" />
+        @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
