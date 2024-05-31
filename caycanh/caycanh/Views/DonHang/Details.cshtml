@@ -1,0 +1,57 @@
+﻿@model caycanh.Models.DonDatHang
+@using caycanh.Models
+@{
+    ViewBag.Title = "Chi tiết Đơn Đặt Hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đơn Đặt Hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>Mã Đơn Đặt Hàng</th>
+        <th>Mã Khách Hàng</th>
+        <th>Mã Nhân Viên</th>
+        <th>Ngày Đặt Hàng</th>
+        <th>Giá Tiền</th>
+    </tr>
+    <tr>
+        <td>@Model.MaDonDatHang</td>
+        <td>@Model.MaKhachHang</td>
+        <td>@Model.MaNhanVien</td>
+        <td>@Model.NgayDatHang</td>
+        <td>@Model.GiaTien</td>
+    </tr>
+</table>
+
+<h3>Chi tiết Đơn Đặt Hàng</h3>
+
+@{
+    var cayCanhList = ViewBag.CayCanhList as List<CayCanh>;
+    Func<string, CayCanh> getCayCanh = maCay => cayCanhList.FirstOrDefault(c => c.MaCay == maCay);
+}
+@{
+    var sanPhamList = ViewBag.SanPhamList as List<SanPham>;
+    Func<string, SanPham> getSanPham = maSanPham => sanPhamList.FirstOrDefault(c => c.MaSanPham == maSanPham);
+}
+<table class="table">
+    <tr>
+        <th>Tên Sản Phẩm</th>
+        <th>Tên Cây</th>
+        <th>Số Lượng</th>
+        <th>Giảm Giá</th>
+        <th>Chiết Khẩu</th>
+    </tr>
+    @foreach (var chiTiet in Model.ChiTietDonDatHangs)
+    {
+        var cay = getCayCanh(chiTiet.MaCay);
+        var sp = getSanPham(chiTiet.MaSanPham);
+        <tr>
+            <td>@(sp!=null?sp.TenSanPham:"sản phẩm không tồn tại")</td>
+            <td>@(cay != null ? cay.TenCay : "Cây không tồn tại")</td>
+            <td>@chiTiet.SoLuong</td>
+            <td>@chiTiet.GiamGia</td>
+            <td>@chiTiet.ChietKhau</td>
+        </tr>
+    }
+</table>
